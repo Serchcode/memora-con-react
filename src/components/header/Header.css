@@ -1,0 +1,28 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+header{
+	height: 50px;
+	border: 1px solid black;
+	margin-bottom: 10px;
+	display: flex;
+	justify-content: space-between;
+	align-content: center;
+	background-color: black;
+}
+
+.Titulo{
+	font-size: 25px;
+	padding: 10px;
+	color: #fff;
+}
+
+.boton-reiniciar{
+	font-family: 'Montserrat', sans-serif;
+	margin-top: 5%;
+	margin-left: 3%;
+	background-color: transparent;
+	border: 3px solid white;
+	border-radius: 4px;
+	color: white;
+	font-size: 25px;
+}
