@@ -1,7 +1,8 @@
 .carta{
 	width: 125px;
 	height: 125px;
-	border-radius: 10px;
+	border-radius: 10px; 
+	margin-bottom: 3%;
 }
 
 .portada{

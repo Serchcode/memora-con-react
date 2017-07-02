@@ -15,6 +15,7 @@ class Header extends Component{
 					Intentos: {this.props.intentos}
 				</div>
 			</header>
+
 			);
 		}
 	};
