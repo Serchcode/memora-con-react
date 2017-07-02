@@ -3,14 +3,15 @@ import './App.css';
 import Header from './components/header/Header';
 import Tablero from './components/tablero/Tablero';
 import construir_rompe from './utils/construir_rompe';
-
+import Footer from './components/footer/footer';
 const getInitialState = () =>{
 	const memorama = construir_rompe();
 	return{
 		memorama,
     par: [],
     comparacion: false,
-    intentos: 0
+    intentos: 0,
+    segundos: 0,
 	};
 }
 
@@ -25,6 +26,7 @@ class App extends Component {
       <div className="App">
         <Header
         intentos={this.state.intentos}
+        segundos={this.state.segundos}
         resetear={()=> this.resetear()}
         />
         <Tablero
@@ -32,6 +34,7 @@ class App extends Component {
         par={this.state.par}
         seleccionCarta={(carta)=>this.seleccionCarta(carta)}
         />
+        <Footer/>
       </div>
     );
   }
@@ -77,18 +80,28 @@ class App extends Component {
     }, 1000)
   }
 
+  unomas(){
+    this.setState((prevState)=>({
+      segundos: prevState.segundos + 1
+    }));
+  }
+
+  componentDidMount(){
+    this.interval = setInterval(()=>this.unomas(),1000);
+  }
+
   verificarGanador(memorama){
     if(
       memorama.filter((carta)=> !carta.Adivinada).length === 0
       ){
-        alert(`Ganaste en ${this.state.intentos} intentos!`);
+        alert(`You won in ${this.state.intentos} attempts and in ${this.state.segundos} seconds!`);
         }
       }
 
-    resetear(){
-      this.setState(
-        getInitialState()
-        );
+  resetear(){
+    this.setState(
+      getInitialState()
+      );
     }
   }
 

@@ -5,14 +5,17 @@ class Header extends Component{
 	render(){
 		return(
 			<header>
+				<div className="Titulo"> Memory game </div>
+				<div className="Titulo">
+					attempts: {this.props.intentos}
+				</div>
+				<div className="Titulo">
+					seconds: {this.props.segundos}
+				</div>
 				<div>
 				<button className="boton-reiniciar" onClick={this.props.resetear}>
-					Reiniciar
+					Restart
 				</button>
-				</div>
-				<div className="Titulo"> Memorama </div>
-				<div className="Titulo">
-					Intentos: {this.props.intentos}
 				</div>
 			</header>
 
